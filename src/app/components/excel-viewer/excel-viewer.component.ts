@@ -17,8 +17,10 @@ export class ExcelViewerComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
 
   ngOnChanges() {
+    console.log('URL :' + this.excelFileUrl);
     this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
       this.excelFileUrl
     );
+    console.log('safeUrl :' + this.safeUrl);
   }
 }
