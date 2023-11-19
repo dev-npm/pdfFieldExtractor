@@ -34,6 +34,7 @@ export class AppComponent {
         this.jsonData = JSON.parse(JSON.stringify(this.formFields));
         this.exportToExcel();
       };
+      fileReader.readAsArrayBuffer(this.pdfFile);
     }
   }
   exportToExcel() {
