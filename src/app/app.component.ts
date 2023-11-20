@@ -47,7 +47,8 @@ export class AppComponent {
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-    const data: Blob = new Blob([excelBuffer], { type: this.EXCEL_TYPE });
-    this.excelBlobUrl = URL.createObjectURL(data);
+    XLSX.writeFile(wb, fileName + '.xlsx');
+    // const data: Blob = new Blob([excelBuffer], { type: this.EXCEL_TYPE });
+    // this.excelBlobUrl = URL.createObjectURL(data);
   }
 }
